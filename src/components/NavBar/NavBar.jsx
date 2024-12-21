@@ -98,18 +98,18 @@ const NavBar = ({ itemCount = 1 }) => {
             </Link>
           </li>
         </ul>
+        <div className="md:hidden fixed bottom-0 left-0 w-[50%] bg-white flex flex-col sm:flex-row justify-around text-[12px]  text-white">
+          <div className="w-[100%] sm:w-[50%] text-center cursor-pointer bg-red-400 hover:bg-red-500 p-2">
+            <p className="font-bold">Email</p>
+            <p className="text-[10px]">shubham.tade@gmail.com</p>
+          </div>
+          <div className="w-[100%] sm:w-[50%] text-center cursor-pointer bg-red-400 hover:bg-red-500 p-2">
+            <p className="font-bold">Call</p>
+            <p className="text-[10px]">+91 9876543210</p>
+          </div>
+        </div>
       </nav>
       <Other />
-      <div className="md:hidden fixed bottom-0 left-0 w-[50%] bg-white  flex justify-around text-[12px]  text-white">
-        <div className="w-[50%] text-center cursor-pointer bg-red-400 hover:bg-red-500 p-2">
-          <p className="font-bold">Email</p>
-          <p className="text-[10px]">shubham.tade@gmail.com</p>
-        </div>
-        <div className="w-[50%] text-center cursor-pointer bg-red-400 hover:bg-red-500 p-2">
-          <p className="font-bold">Call</p>
-          <p className="text-[10px]">+91 9876543210</p>
-        </div>
-      </div>
     </div>
   );
 };
