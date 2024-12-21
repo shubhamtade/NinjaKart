@@ -1,14 +1,8 @@
 import React from "react";
-import ImgMain from "../assets/Hero.png";
-import MdImagMain from "../assets/MdHero.png";
+import Hero from "../components/Home/Hero";
 
 const Home = () => {
-  return (
-    <div className="cursor-pointer">
-      <img src={`${ImgMain}`} alt="" className="hidden sm:block" />
-      <img src={`${MdImagMain}`} alt="" className="sm:hidden w-[100%]" />
-    </div>
-  );
+  return <Hero />;
 };
 
 export default Home;
