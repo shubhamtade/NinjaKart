@@ -11,7 +11,7 @@ const TrendingBrand = () => {
   return (
     <div className="my-3 md:my-5 mx-[10%] text-center">
       <h3 className="text-2xl md:text-xl font-bold md:mb-3 opacity-50 md:opacity-100">
-        Trending Brands
+        Trending Brand
       </h3>
       <div className="hidden md:flex justify-around items-center grayscale opacity-50">
         <img src={Logo1} alt="Brand 1" className="w-24 h-24" />
