@@ -8,7 +8,7 @@ import "swiper/css";
 
 const JustInSection = () => {
   const items = Array.from({ length: 5 }, (_, index) => (
-    <SwiperSlide key={index}>
+    <SwiperSlide key={index} className="flex flex-col items-center">
       <div
         className="bg-slate-600 w-[200px] h-[250px] rounded-xl relative flex justify-center items-center bg-cover bg-center group"
         style={{ backgroundImage: `url(${Model1})` }}
@@ -45,6 +45,9 @@ const JustInSection = () => {
       <Swiper
         spaceBetween={10}
         breakpoints={{
+          440: {
+            slidesPerView: 1.5,
+          },
           640: {
             slidesPerView: 2.5,
           },
