@@ -3,6 +3,7 @@ import Hero from "../components/Home/Hero";
 import TrendingBrand from "../components/Home/TrendingBrand";
 import JustInSection from "../components/Home/JustInSection";
 import CategoriesSection from "../components/Home/CategoriesSection";
+import FeatureSection from "../components/Home/FeatureSection";
 
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
         <TrendingBrand />
         <JustInSection />
         <CategoriesSection />
+        <FeatureSection />
       </div>
     </div>
   );
