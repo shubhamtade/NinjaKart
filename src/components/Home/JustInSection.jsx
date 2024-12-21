@@ -1,26 +1,33 @@
 import React from "react";
 import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 import FiberManualRecordOutlinedIcon from "@mui/icons-material/FiberManualRecordOutlined";
+import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
+import Model1 from "../../assets/JustInModel1.jpg";
+import Rating from "@mui/material/Rating";
 
 const JustInSection = () => {
-  const items = Array.from({ length: 4 }, (_, index) => (
-    <div key={index} className="group relative">
-      <img
-        src="https://tailwindui.com/plus/img/ecommerce-images/product-page-01-related-product-01.jpg"
-        alt=""
-        className="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-80"
-      />
-      <div className="mt-4 flex justify-between">
-        <div>
-          <h3 className="text-sm text-gray-700">
-            <a href="#">
-              <span aria-hidden="true" className="absolute inset-0"></span>
-              Basic Tee
-            </a>
-          </h3>
-          <p className="mt-1 text-sm text-gray-500">Black</p>
+  const items = Array.from({ length: 5 }, (_, index) => (
+    <div>
+      <div
+        key={index}
+        className="bg-slate-600 w-[200px] h-[250px] rounded-xl relative flex justify-center items-center bg-cover bg-center group"
+        style={{ backgroundImage: `url(${Model1})` }}
+      >
+        <div className="">
+          <p className="bg-white px-2 rounded-sm text-[12px] absolute top-3 left-3">
+            NEW
+          </p>
+          <FavoriteBorderOutlinedIcon className="bg-white p-1 rounded-full absolute top-3 right-3" />
         </div>
-        <p className="text-sm font-medium text-gray-900">$35</p>
+        <button className="hidden group-hover:block bg-black absolute bottom-3 w-[90%] text-center text-white py-2 text-[12px] rounded-lg transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100">
+          Add to cart
+        </button>
+      </div>
+      <div className="mt-1">
+        <Rating name="simple-controlled" value="3" size="small" />
+        <p className="font-black text-[12px]">Product Cloth Name</p>
+        <p className="font-bold text-[12px]">Product Category</p>
+        <p className="font-bold text-[12px]">₹ 500</p>
       </div>
     </div>
   ));
@@ -36,13 +43,7 @@ const JustInSection = () => {
         </div>
       </div>
 
-      <div className="bg-white flex justify-center">
-        <div className="max-w-2xl lg:max-w-7xl lg:px-8">
-          <div className="mt-6 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-4 lg:grid-cols-4 xl:gap-x-8">
-            {items}
-          </div>
-        </div>
-      </div>
+      <div className="flex justify-center flex-wrap gap-5">{items}</div>
     </div>
   );
 };
