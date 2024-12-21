@@ -4,6 +4,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
 import Badge from "@mui/material/Badge";
+import ThemeController from "../ThemeController";
 
 const Other = ({ itemCount = "0" }) => {
   return (
@@ -17,11 +18,17 @@ const Other = ({ itemCount = "0" }) => {
         </div>
         <div className="flex flex-col items-center">
           <Link to="/cart">
-            <Badge badgeContent={itemCount} color="primary" className="text-[4px]">
+            <Badge
+              badgeContent={itemCount}
+              color="primary"
+              className="text-[4px]"
+            >
               <ShoppingBagOutlinedIcon />
             </Badge>
           </Link>
         </div>
+
+        {/* <ThemeController /> */}
       </div>
     </div>
   );

@@ -12,7 +12,11 @@ export default {
       lg: "1440px",
       // => @media (min-width: 1440px) { ... }
     },
+
     extend: {},
   },
-  plugins: [],
+  plugins: [require("daisyui")],
+  daisyui: {
+    themes: ["light", "dark"],
+  },
 };
