@@ -45,7 +45,7 @@ const JustInSection = () => {
       <Swiper
         spaceBetween={10}
         breakpoints={{
-          440: {
+          420: {
             slidesPerView: 1.5,
           },
           640: {
