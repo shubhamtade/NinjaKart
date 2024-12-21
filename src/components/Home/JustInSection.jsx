@@ -5,6 +5,12 @@ import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlin
 import Model1 from "../../assets/JustInModel1.jpg";
 import Rating from "@mui/material/Rating";
 
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+
 const JustInSection = () => {
   const items = Array.from({ length: 5 }, (_, index) => (
     <div>
@@ -44,6 +50,19 @@ const JustInSection = () => {
       </div>
 
       <div className="flex justify-center flex-wrap gap-5">{items}</div>
+
+      <Swiper
+        spaceBetween={50}
+        slidesPerView={3}
+        onSlideChange={() => console.log("slide change")}
+        onSwiper={(swiper) => console.log(swiper)}
+      >
+        <SwiperSlide>Slide 1</SwiperSlide>
+        <SwiperSlide>Slide 2</SwiperSlide>
+        <SwiperSlide>Slide 3</SwiperSlide>
+        <SwiperSlide>Slide 4</SwiperSlide>
+        ...
+      </Swiper>
     </div>
   );
 };
