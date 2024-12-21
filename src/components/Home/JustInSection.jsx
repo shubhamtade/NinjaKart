@@ -17,7 +17,7 @@ const JustInSection = () => {
           <p className="bg-white px-2 rounded-sm text-[12px] absolute top-3 left-3">
             NEW
           </p>
-          <FavoriteBorderOutlinedIcon className="bg-white p-1 rounded-full absolute top-3 right-3" />
+          <FavoriteBorderOutlinedIcon className="opacity-50 bg-white p-1 rounded-full absolute top-3 right-3 hover:opacity-100 cursor-pointer" />
         </div>
         <button className="hidden group-hover:block bg-black absolute bottom-3 w-[90%] text-center text-white py-2 text-[12px] rounded-lg transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100">
           Add to cart
@@ -37,8 +37,8 @@ const JustInSection = () => {
         <h3 className="text-3xl font-semibold">Just In</h3>
         <div>
           <FiberManualRecordIcon />
-          <FiberManualRecordOutlinedIcon />
-          <FiberManualRecordOutlinedIcon />
+          <FiberManualRecordOutlinedIcon className="opacity-50" />
+          <FiberManualRecordOutlinedIcon className="opacity-50" />
         </div>
       </div>
 
