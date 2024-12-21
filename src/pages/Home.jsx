@@ -1,13 +1,17 @@
 import React from "react";
 import Hero from "../components/Home/Hero";
 import TrendingBrand from "../components/Home/TrendingBrand";
+import JustInSection from "../components/Home/JustInSection";
 
 const Home = () => {
   return (
-    <>
+    <div>
       <Hero />
-      <TrendingBrand />
-    </>
+      <div className="md:container md:mx-auto">
+        <TrendingBrand />
+        <JustInSection />
+      </div>
+    </div>
   );
 };
 
