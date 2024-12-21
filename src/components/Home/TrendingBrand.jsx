@@ -3,15 +3,18 @@ import Logo1 from "../../assets/logo/logoipsum-288.svg";
 import Logo2 from "../../assets/logo/logoipsum-321.svg";
 import Logo3 from "../../assets/logo/logoipsum-330.svg";
 import { Swiper, SwiperSlide } from "swiper/react";
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/scrollbar";
+import SwiperCore, { Scrollbar } from "swiper/core";
+
+// Install Swiper modules
+SwiperCore.use([Scrollbar]);
 
 const TrendingBrand = () => {
   return (
     <div className="my-3 md:my-5 mx-[10%] text-center">
       <h3 className="text-2xl md:text-xl font-bold md:mb-3 opacity-50 md:opacity-100">
-        Trending Brands
+        Trending Brand
       </h3>
       <div className="hidden md:flex justify-around items-center grayscale opacity-50">
         <img src={Logo1} alt="Brand 1" className="w-24 h-24" />
@@ -22,7 +25,12 @@ const TrendingBrand = () => {
         <img src={Logo3} alt="Brand 3" className="w-24 h-24" />
       </div>
       <div className="md:hidden grayscale opacity-50">
-        <Swiper spaceBetween={10} slidesPerView={3} loop={true}>
+        <Swiper
+          spaceBetween={10}
+          slidesPerView={3}
+          loop={true}
+          scrollbar={{ draggable: true }}
+        >
           <SwiperSlide>
             <img src={Logo1} alt="Brand 1" className="w-24 h-24" />
           </SwiperSlide>
