@@ -26,7 +26,7 @@ const NavBar = ({ itemCount = 1 }) => {
         {menuOpen ? null : <MenuIcon />}
       </div>
       <nav
-        className={`fixed md:static top-0 left-0 w-[50%] h-full md:w-auto bg-white md:bg-transparent transform ${
+        className={`z-50 fixed md:static top-0 left-0 w-[50%] h-full md:w-auto bg-white md:bg-transparent  transform ${
           menuOpen ? "translate-x-0" : "-translate-x-full"
         } transition-transform duration-300 ease-in-out md:transform-none`}
       >
