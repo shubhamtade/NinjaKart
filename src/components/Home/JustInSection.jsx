@@ -3,19 +3,13 @@ import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 import FiberManualRecordOutlinedIcon from "@mui/icons-material/FiberManualRecordOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import Model1 from "../../assets/JustInModel1.jpg";
-import Rating from "@mui/material/Rating";
-
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
 import "swiper/css";
 
 const JustInSection = () => {
   const items = Array.from({ length: 5 }, (_, index) => (
-    <div>
+    <SwiperSlide key={index}>
       <div
-        key={index}
         className="bg-slate-600 w-[200px] h-[250px] rounded-xl relative flex justify-center items-center bg-cover bg-center group"
         style={{ backgroundImage: `url(${Model1})` }}
       >
@@ -30,12 +24,11 @@ const JustInSection = () => {
         </button>
       </div>
       <div className="mt-1">
-        <Rating name="simple-controlled" value="3" size="small" />
         <p className="font-black text-[12px]">Product Cloth Name</p>
         <p className="font-bold text-[12px]">Product Category</p>
         <p className="font-bold text-[12px]">₹ 500</p>
       </div>
-    </div>
+    </SwiperSlide>
   ));
 
   return (
@@ -49,19 +42,22 @@ const JustInSection = () => {
         </div>
       </div>
 
-      <div className="flex justify-center flex-wrap gap-5">{items}</div>
-
       <Swiper
-        spaceBetween={50}
-        slidesPerView={3}
-        onSlideChange={() => console.log("slide change")}
-        onSwiper={(swiper) => console.log(swiper)}
+        spaceBetween={10}
+        breakpoints={{
+          640: {
+            slidesPerView: 2.5,
+          },
+          768: {
+            slidesPerView: 3.5,
+          },
+          1024: {
+            slidesPerView: 5,
+          },
+        }}
+        loop={true}
       >
-        <SwiperSlide>Slide 1</SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
-        ...
+        {items}
       </Swiper>
     </div>
   );
