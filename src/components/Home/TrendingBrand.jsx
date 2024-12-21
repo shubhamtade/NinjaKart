@@ -6,6 +6,10 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/scrollbar";
+import SwiperCore, { Scrollbar } from "swiper/core";
+
+// Install Swiper modules
+SwiperCore.use([Scrollbar]);
 
 const TrendingBrand = () => {
   return (
@@ -22,7 +26,12 @@ const TrendingBrand = () => {
         <img src={Logo3} alt="Brand 3" className="w-24 h-24" />
       </div>
       <div className="md:hidden grayscale opacity-50">
-        <Swiper spaceBetween={10} slidesPerView={3} loop={true}>
+        <Swiper
+          spaceBetween={10}
+          slidesPerView={3}
+          loop={true}
+          scrollbar={{ draggable: true }}
+        >
           <SwiperSlide>
             <img src={Logo1} alt="Brand 1" className="w-24 h-24" />
           </SwiperSlide>
