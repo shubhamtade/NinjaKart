@@ -26,9 +26,9 @@ const NavBar = ({ itemCount = 1 }) => {
         {menuOpen ? null : <MenuIcon />}
       </div>
       <nav
-        className={`md:block ${
-          menuOpen ? "block" : "hidden"
-        } absolute md:static top-0 left-0 w-[50%] h-full md:w-auto bg-white md:bg-transparent`}
+        className={`fixed md:static top-0 left-0 w-[50%] h-full md:w-auto bg-white md:bg-transparent transform ${
+          menuOpen ? "translate-x-0" : "-translate-x-full"
+        } transition-transform duration-300 ease-in-out md:transform-none`}
       >
         <div className="flex justify-end p-4 md:hidden">
           <button onClick={toggleMenu}>
@@ -98,7 +98,7 @@ const NavBar = ({ itemCount = 1 }) => {
             </Link>
           </li>
         </ul>
-        <div className="md:hidden fixed bottom-0 left-0 w-[50%] bg-white flex flex-col sm:flex-row justify-around text-[12px]  text-white">
+        <div className="md:hidden fixed bottom-0 left-0 w-[100%] bg-white flex flex-col sm:flex-row justify-around text-[12px]  text-white">
           <div className="w-[100%] sm:w-[50%] text-center cursor-pointer bg-red-400 hover:bg-red-500 p-2">
             <p className="font-bold">Email</p>
             <p className="text-[10px]">shubham.tade@gmail.com</p>

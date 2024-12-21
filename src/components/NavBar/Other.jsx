@@ -3,24 +3,25 @@ import { Link } from "react-router-dom";
 import SearchIcon from "@mui/icons-material/Search";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
+import Badge from "@mui/material/Badge";
 
-const Other = ({ itemCount = 1 }) => {
+const Other = ({ itemCount = "0" }) => {
   return (
-    <div className="hidden md:block">
-      <div className="flex items-center gap-3 relative">
-        <SearchIcon />
-        <AccountCircleOutlinedIcon />
-
-        <Link to="/cart">
-          <div className="relative">
-            <ShoppingBagOutlinedIcon />
-            {itemCount > 0 && (
-              <span className="absolute bottom-0 right-[-15px] bg-black text-white rounded-full text-xs w-4 h-4 flex items-center justify-center">
-                {itemCount}
-              </span>
-            )}
-          </div>
-        </Link>
+    <div className="hidden md:flex justify-center items-center">
+      <div className="flex items-center gap-3">
+        <div className="flex flex-col items-center">
+          <SearchIcon />
+        </div>
+        <div className="flex flex-col items-center">
+          <AccountCircleOutlinedIcon />
+        </div>
+        <div className="flex flex-col items-center">
+          <Link to="/cart">
+            <Badge badgeContent={itemCount} color="primary" className="text-[4px]">
+              <ShoppingBagOutlinedIcon />
+            </Badge>
+          </Link>
+        </div>
       </div>
     </div>
   );
