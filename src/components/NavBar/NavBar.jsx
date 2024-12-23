@@ -11,6 +11,7 @@ import InfoIcon from "@mui/icons-material/Info";
 import RssFeedIcon from "@mui/icons-material/RssFeed";
 import CallIcon from "@mui/icons-material/Call";
 import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
+import ThemeController from "../ThemeController";
 
 const NavBar = ({ itemCount = 1 }) => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -26,7 +27,7 @@ const NavBar = ({ itemCount = 1 }) => {
         {menuOpen ? null : <MenuIcon />}
       </div>
       <nav
-        className={`z-50 fixed md:static top-0 left-0 w-[50%] h-full md:w-auto bg-white md:bg-transparent  transform ${
+        className={`z-50 fixed md:static top-0 left-0 w-[50%] h-full md:w-auto bg-white  md:bg-transparent  transform ${
           menuOpen ? "translate-x-0" : "-translate-x-full"
         } transition-transform duration-300 ease-in-out md:transform-none`}
       >
@@ -35,14 +36,14 @@ const NavBar = ({ itemCount = 1 }) => {
             <CloseIcon />
           </button>
         </div>
-        <ul className="bg-white text-black flex flex-col md:flex-row justify-between gap-4 p-4 md:p-0">
+        <ul className=" flex flex-col md:flex-row justify-between gap-4 p-4 md:p-0">
           <li>
             <Link
               to="/"
               onClick={toggleMenu}
               className="flex items-center gap-2"
             >
-              <HomeIcon className="md:text-white" />
+              <HomeIcon className="md:text-white md:opacity-0" />
               Home
             </Link>
           </li>
@@ -52,7 +53,7 @@ const NavBar = ({ itemCount = 1 }) => {
               onClick={toggleMenu}
               className="flex items-center gap-2"
             >
-              <ShoppingBasketIcon className="md:text-white" />
+              <ShoppingBasketIcon className="md:text-white md:opacity-0" />
               Products <KeyboardArrowDownIcon />
             </Link>
           </li>
@@ -62,7 +63,7 @@ const NavBar = ({ itemCount = 1 }) => {
               onClick={toggleMenu}
               className="flex items-center gap-2"
             >
-              <InfoIcon className="md:text-white" />
+              <InfoIcon className="md:text-white md:opacity-0" />
               About
             </Link>
           </li>
@@ -72,7 +73,7 @@ const NavBar = ({ itemCount = 1 }) => {
               onClick={toggleMenu}
               className="flex items-center gap-2"
             >
-              <RssFeedIcon className="md:text-white" />
+              <RssFeedIcon className="md:text-white md:opacity-0" />
               Blog
             </Link>
           </li>
@@ -82,7 +83,7 @@ const NavBar = ({ itemCount = 1 }) => {
               onClick={toggleMenu}
               className="flex items-center gap-2"
             >
-              <CallIcon className="md:text-white" />
+              <CallIcon className="md:text-white md:opacity-0" />
               Contact
             </Link>
           </li>
@@ -96,6 +97,10 @@ const NavBar = ({ itemCount = 1 }) => {
                 </span>
               )}
             </Link>
+          </li>
+
+          <li className="md:hidden ">
+            <ThemeController />
           </li>
         </ul>
         <div className="md:hidden fixed bottom-0 left-0 w-[100%] bg-white flex flex-col sm:flex-row justify-around text-[12px]  text-white">

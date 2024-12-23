@@ -28,7 +28,7 @@ const Other = ({ itemCount = "0" }) => {
           </Link>
         </div>
 
-        {/* <ThemeController /> */}
+        <ThemeController />
       </div>
     </div>
   );
