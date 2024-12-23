@@ -7,21 +7,27 @@ import Blog from "./pages/Blog";
 import Cart from "./pages/Cart";
 import Contact from "./pages/Contact";
 import Products from "./pages/Products";
+import MyProvider from "./Context";
+import ProductDetails from "./pages/ProductDetails";
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="about" element={<About />} />
-          <Route path="blog" element={<Blog />} />
-          <Route path="cart" element={<Cart />} />
-          <Route path="contact" element={<Contact />} />
-          <Route path="products" element={<Products />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <MyProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="about" element={<About />} />
+            <Route path="blog" element={<Blog />} />
+            <Route path="cart" element={<Cart />} />
+            <Route path="contact" element={<Contact />} />
+            <Route path="products" element={<Products />} />
+            <Route path="product/:id" element={<ProductDetails />} />
+            <Route path="*" element={<h1>Not Found</h1>} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </MyProvider>
   );
 };
 
