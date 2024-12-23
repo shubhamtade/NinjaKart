@@ -9,6 +9,7 @@ const MyProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
   const [itemCount, setItemCount] = useState(0);
+  const [cartItem, setCartItem] = useState([]);
 
   useEffect(() => {
     axios
@@ -33,6 +34,8 @@ const MyProvider = ({ children }) => {
         productId,
         itemCount,
         setItemCount,
+        cartItem,
+        setCartItem,
       }}
     >
       {children}

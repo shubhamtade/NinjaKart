@@ -4,11 +4,9 @@ import { MyContext } from "../Context";
 import { useParams } from "react-router-dom";
 
 const ProductDetails = () => {
-  const { itemCount, setItemCount } = useContext(MyContext);
-
+  const { itemCount, setItemCount, setCartItem, cartItem } =
+    useContext(MyContext);
   const { id } = useParams();
-
-  console.log("This is params", id);
 
   const [singleProduct, setSingleProduct] = useState({});
   const [loading, setLoading] = useState(true);
@@ -17,7 +15,6 @@ const ProductDetails = () => {
     axios
       .get(`https://dummyjson.com/products/${id}`)
       .then((response) => {
-        console.log(response.data.title);
         setSingleProduct(response.data);
         setLoading(false);
       })
@@ -26,6 +23,20 @@ const ProductDetails = () => {
         setLoading(false);
       });
   }, [id]);
+
+  const updateCartItem = (productId) => {
+    setCartItem((prevCart) => {
+      const existingItem = prevCart.find((item) => item.itemId === productId);
+      if (existingItem) {
+        return prevCart.map((item) =>
+          item.itemId === productId ? { ...item, count: item.count + 1 } : item
+        );
+      } else {
+        return [...prevCart, { itemId: productId, count: 1 }];
+      }
+    });
+    setItemCount(itemCount + 1);
+  };
 
   if (loading) {
     return <div>Loading...</div>;
@@ -100,9 +111,7 @@ const ProductDetails = () => {
       <div className="text-center mt-6">
         <button
           className="border border-black py-2 px-5 rounded-lg cursor-pointer hover:text-green-600 hover:border-green-600 hover:bg-white hover:py-3 hover:px-6 duration-300"
-          onClick={() => {
-            setItemCount(itemCount + 1);
-          }}
+          onClick={() => updateCartItem(singleProduct.id)}
         >
           Add to Cart
         </button>
