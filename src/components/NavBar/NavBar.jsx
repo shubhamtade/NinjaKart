@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import Logo from "./Logo";
 import Other from "./Other";
@@ -12,8 +12,10 @@ import RssFeedIcon from "@mui/icons-material/RssFeed";
 import CallIcon from "@mui/icons-material/Call";
 import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
 import ThemeController from "../ThemeController";
+import { MyContext } from "../../Context";
 
-const NavBar = ({ itemCount = 1 }) => {
+const NavBar = () => {
+  const { itemCount } = useContext(MyContext);
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -92,7 +94,7 @@ const NavBar = ({ itemCount = 1 }) => {
               <ShoppingBagOutlinedIcon className="md:text-white" />
               Cart
               {itemCount > 0 && (
-                <span className="ml-2 right-[-15px] bg-black text-white rounded-full text-xs w-4 h-4 flex items-center justify-center">
+                <span className="ml-2 right-[-15px] bg-[#1a76d2] text-white rounded-full text-xs w-4 h-4 flex items-center justify-center">
                   {itemCount}
                 </span>
               )}

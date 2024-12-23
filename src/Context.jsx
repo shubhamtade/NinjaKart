@@ -8,6 +8,8 @@ const MyProvider = ({ children }) => {
   const [productId, setProductId] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  const [itemCount, setItemCount] = useState(0);
+
   useEffect(() => {
     axios
       .get("https://dummyjson.com/products")
@@ -24,7 +26,14 @@ const MyProvider = ({ children }) => {
 
   return (
     <MyContext.Provider
-      value={{ productList, setProductId, loading, productId }}
+      value={{
+        productList,
+        setProductId,
+        loading,
+        productId,
+        itemCount,
+        setItemCount,
+      }}
     >
       {children}
     </MyContext.Provider>

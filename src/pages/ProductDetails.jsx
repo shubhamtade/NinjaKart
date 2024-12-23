@@ -4,7 +4,7 @@ import { MyContext } from "../Context";
 import { useParams } from "react-router-dom";
 
 const ProductDetails = () => {
-  // const { productId } = useContext(MyContext);
+  const { itemCount, setItemCount } = useContext(MyContext);
 
   const { id } = useParams();
 
@@ -98,7 +98,12 @@ const ProductDetails = () => {
         </div>
       </div>
       <div className="text-center mt-6">
-        <button className="border border-black py-2 px-5 rounded-lg cursor-pointer hover:text-green-600 hover:border-green-600 hover:bg-white hover:py-3 hover:px-6 duration-300">
+        <button
+          className="border border-black py-2 px-5 rounded-lg cursor-pointer hover:text-green-600 hover:border-green-600 hover:bg-white hover:py-3 hover:px-6 duration-300"
+          onClick={() => {
+            setItemCount(itemCount + 1);
+          }}
+        >
           Add to Cart
         </button>
       </div>

@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import SearchIcon from "@mui/icons-material/Search";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
 import Badge from "@mui/material/Badge";
 import ThemeController from "../ThemeController";
+import { MyContext } from "../../Context";
 
-const Other = ({ itemCount = "0" }) => {
+const Other = () => {
+  const { itemCount } = useContext(MyContext);
   return (
     <div className="hidden md:flex justify-center items-center">
       <div className="flex items-center gap-3">
